@@ -1,9 +1,5 @@
-pluginManagement {
-    repositories {
-        gradlePluginPortal()
-    }
-}
 rootProject.name = 'kotlin-spring-multi-project'
 include 'kotlin-spring-domain'
 include 'kotlin-spring-usecase'
 include 'kotlin-spring-adapter'
+include 'kotlin-spring-infrastructure'

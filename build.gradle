@@ -57,4 +57,5 @@ dependencies {
     implementation project(':kotlin-spring-domain')
     implementation project(':kotlin-spring-usecase')
     implementation project(':kotlin-spring-adapter')
+    implementation project(':kotlin-spring-infrastructure')
 }
