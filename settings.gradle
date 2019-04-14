@@ -4,4 +4,5 @@ pluginManagement {
     }
 }
 rootProject.name = 'kotlin-spring-multi-project'
+include 'kotlin-spring-usecase'
 include 'kotlin-spring-adapter'
