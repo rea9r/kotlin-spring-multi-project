@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/sampledb
+    username: testuser
+    password: testuser
+    driverClassName: com.mysql.jdbc.Driver
+  jpa:
+    open-in-view: true
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        use_sql_comments: true
+        generate_statistics: true
+
+logging:
+  file:
+    max-size: 50MB
+    max-history: 10
+  level:
+    root: info
+    org.springframework: info
+    org.hibernate: info
+    org.hibernate.SQL: debug
