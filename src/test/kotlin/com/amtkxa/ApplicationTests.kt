@@ -1,4 +1,4 @@
-package com.amtkxa.kotlinspringmultiproject
+package com.amtkxa
 
 import org.junit.Test
 import org.junit.runner.RunWith
