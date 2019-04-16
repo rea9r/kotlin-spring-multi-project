@@ -7,15 +7,15 @@ import com.amtkxa.usecase.impl.fetchuser.FetchUserResponse
 class FetchUserPresenter : Presenter<FetchUserViewModelList>, FetchUserResponse {
     var fetchUserViewModelList = FetchUserViewModelList()
 
-    override fun createView(): FetchUserViewModelList {
+    override fun createViewModel(): FetchUserViewModelList {
         return this.fetchUserViewModelList
     }
 
     override fun setUserList(userList: List<User>) {
-        fetchUserViewModelList = convertToView(userList)
+        fetchUserViewModelList = toViewModel(userList)
     }
 
-    private fun convertToView(userList: List<User>): FetchUserViewModelList {
+    private fun toViewModel(userList: List<User>): FetchUserViewModelList {
         val viewModelList = FetchUserViewModelList()
         userList.stream().forEach { user: User -> process(user, viewModelList) }
         return viewModelList
