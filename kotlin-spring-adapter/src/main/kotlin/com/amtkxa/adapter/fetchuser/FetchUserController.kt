@@ -13,6 +13,6 @@ class FetchUserController(private val fetchUserUseCase: FetchUserUseCase) {
         val request = FetchUserRequest()
         val presenter = FetchUserPresenter()
         fetchUserUseCase.execute(request, presenter)
-        return presenter.createView().list
+        return presenter.createViewModel().list
     }
 }
