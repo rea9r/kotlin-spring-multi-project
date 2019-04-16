@@ -1,5 +1,5 @@
 dependencies {
-    implementation project(':kotlin-spring-adapter')
+    compile project(':kotlin-spring-adapter')
 
     // MySQL
     implementation 'mysql:mysql-connector-java:8.0.15'

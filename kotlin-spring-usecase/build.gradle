@@ -1,5 +1,8 @@
 dependencies {
-    implementation project(':kotlin-spring-domain')
+    compile project(':kotlin-spring-domain')
+
+    // Spring Boot
+    implementation "org.springframework.boot:spring-boot-starter-data-jpa"
 
     // Lombok
     implementation 'org.projectlombok:lombok:1.18.6'
