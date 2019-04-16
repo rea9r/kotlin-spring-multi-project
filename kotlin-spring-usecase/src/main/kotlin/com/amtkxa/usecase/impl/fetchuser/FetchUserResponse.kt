@@ -5,5 +5,5 @@ import com.amtkxa.usecase.core.usecase.Response
 
 @FunctionalInterface
 interface FetchUserResponse : Response {
-    fun setUser(user: User)
+    fun setUserList(userList: List<User>)
 }
