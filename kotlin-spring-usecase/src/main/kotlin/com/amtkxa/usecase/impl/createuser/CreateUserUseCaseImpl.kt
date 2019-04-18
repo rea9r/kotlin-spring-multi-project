@@ -8,7 +8,10 @@ import org.springframework.stereotype.Service
 class CreateUserUseCaseImpl(private val userRepository: UserRepository) : CreateUserUseCase {
 
     override fun execute(request: CreateUserRequest, response: CreateUserResponse) {
-        val user = userRepository.save(User(name = request.name, country = request.country))
+        val user = userRepository.save(User(
+                name = request.name,
+                country = request.country
+        ))
         response.setUser(user)
     }
 }
