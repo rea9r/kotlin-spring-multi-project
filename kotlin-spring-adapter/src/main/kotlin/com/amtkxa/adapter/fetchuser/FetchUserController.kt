@@ -13,7 +13,10 @@ class FetchUserController(private val fetchUserUseCase: FetchUserUseCase) {
     fun find(@RequestParam(required = false) name: String?,
              @RequestParam(required = false) country: String?
     ): List<FetchUserViewModel> {
-        val request = FetchUserRequest(name, country)
+        val request = FetchUserRequest(
+                name = name,
+                country = country
+        )
         val presenter = FetchUserPresenter()
         fetchUserUseCase.execute(request, presenter)
         return presenter.createViewModel().list
