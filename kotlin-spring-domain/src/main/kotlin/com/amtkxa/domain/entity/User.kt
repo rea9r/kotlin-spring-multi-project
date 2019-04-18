@@ -12,12 +12,15 @@ data class User(
         var id: Long = 0,
         @Column(name = "name", nullable = false)
         var name: String = "",
+        @Column(name = "country", nullable = false)
+        var country: String = "",
         @Column(name = "updated", nullable = false)
         var updated: LocalDateTime = LocalDateTime.now()
 ) : Serializable {
 
     fun merge(user: User) {
         name = user.name
+        country = user.country
     }
 
     @PrePersist
