@@ -21,10 +21,10 @@ class UserRepositoryTests {
     lateinit var sut: UserRepository
 
     @Test
-    @Sql(statements = ["INSERT INTO user (id, name, updated) VALUES (1, 'test', CURRENT_TIMESTAMP)"])
+    @Sql(statements = ["INSERT INTO user (userId, name, updated) VALUES (1, 'test', CURRENT_TIMESTAMP)"])
     fun findById() {
         val expected = entityManager.find(User::class.java, 1L)
-        val actual = sut.findById(expected.id).orElseGet { null }
+        val actual = sut.findById(expected.userId).orElseGet { null }
         assertThat(actual).isNotNull()
         assertThat(actual).isEqualTo(expected)
     }
@@ -34,17 +34,17 @@ class UserRepositoryTests {
         val updated = LocalDateTime.of(2019, 4, 15, 21, 39, 0)
         val expected = User(name = "testuser", updated = updated)
         sut.saveAndFlush(expected)
-        val actual = entityManager.find(User::class.java, expected.id)
+        val actual = entityManager.find(User::class.java, expected.userId)
         assertThat(actual).isEqualTo(expected)
     }
 
     @Test
-    @Sql(statements = ["INSERT INTO user (id, name, updated) VALUES (1, 'test', CURRENT_TIMESTAMP)"])
+    @Sql(statements = ["INSERT INTO user (userId, name, updated) VALUES (1, 'test', CURRENT_TIMESTAMP)"])
     fun delete() {
         val expected = entityManager.find(User::class.java, 1L)
-        sut.deleteById(expected.id)
+        sut.deleteById(expected.userId)
         sut.flush()
-        val actual = entityManager.find(User::class.java, expected.id)
+        val actual = entityManager.find(User::class.java, expected.userId)
         assertThat(actual).isNull()
     }
 }

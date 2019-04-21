@@ -9,7 +9,8 @@ import javax.persistence.*
 data class User(
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        var id: Long = 0,
+        @Column(name = "user_id", nullable = false)
+        var userId: Long = 0,
         @Column(name = "name", nullable = false)
         var name: String = "",
         @Column(name = "country", nullable = false)

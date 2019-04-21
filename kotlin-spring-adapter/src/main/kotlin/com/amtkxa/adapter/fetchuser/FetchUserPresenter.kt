@@ -23,7 +23,7 @@ class FetchUserPresenter : Presenter<FetchUserViewModelList>, FetchUserResponse 
 
     private fun process(user: User, viewModelList: FetchUserViewModelList) {
         val viewModel = FetchUserViewModel.Builder.build {
-            id = user.id
+            userId = user.userId
             name = user.name
         }
         viewModelList.add(viewModel)

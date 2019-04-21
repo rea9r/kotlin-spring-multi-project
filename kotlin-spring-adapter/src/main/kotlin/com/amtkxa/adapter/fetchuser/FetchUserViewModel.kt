@@ -3,18 +3,18 @@ package com.amtkxa.adapter.fetchuser
 import java.time.LocalDateTime
 
 data class FetchUserViewModel(
-        val id: Long = 0,
+        val userId: Long = 0,
         val name: String? = null,
         val updated: LocalDateTime = LocalDateTime.now()
 ) {
     class Builder {
-        var id: Long = 0
+        var userId: Long = 0
         var name: String? = null
         var updated: LocalDateTime = LocalDateTime.now()
 
         fun build(): FetchUserViewModel =
                 FetchUserViewModel(
-                        id = requireNotNull(id),
+                        userId = requireNotNull(userId),
                         name = requireNotNull(name),
                         updated = updated
                 )

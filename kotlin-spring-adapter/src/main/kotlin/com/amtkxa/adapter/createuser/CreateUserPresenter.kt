@@ -13,7 +13,7 @@ class CreateUserPresenter : Presenter<CreateUserViewModel>, CreateUserResponse {
 
     override fun setUser(user: User) {
         createUserViewModel = CreateUserViewModel.Builder.build {
-            id = user.id
+            userId = user.userId
             name = user.name
             country = user.country
         }
