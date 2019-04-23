@@ -25,6 +25,7 @@ class FetchUserPresenter : Presenter<FetchUserViewModelList>, FetchUserResponse 
         val viewModel = FetchUserViewModel.Builder.build {
             userId = user.userId
             name = user.name
+            country = user.country
         }
         viewModelList.add(viewModel)
     }
