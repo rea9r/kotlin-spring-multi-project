@@ -14,6 +14,7 @@ class EditUserRequest(userId: Long, name: String?, country: String?) : Request {
     var country: String = ""
 
     init {
+        this.userId = userId
         this.name = name ?: ""
         this.country = country ?: ""
     }
