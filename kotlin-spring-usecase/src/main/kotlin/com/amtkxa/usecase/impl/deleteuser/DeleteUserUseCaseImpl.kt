@@ -10,5 +10,6 @@ class DeleteUserUseCaseImpl(private val userRepository: UserRepository) : Delete
     @Transactional(timeout = 30)
     override fun execute(request: DeleteUserRequest, response: DeleteUserResponse) {
         userRepository.deleteById(request.userId)
+        response.setUserId(request.userId)
     }
 }
